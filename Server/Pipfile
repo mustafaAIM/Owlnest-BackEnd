@@ -13,6 +13,7 @@ graphviz = "*"
 django-cors-headers = "*"
 pyjwt = "*"
 pillow = "*"
+python-dateutil = "*"
 
 [dev-packages]
 
