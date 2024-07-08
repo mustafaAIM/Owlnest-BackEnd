@@ -42,11 +42,8 @@ class LoginView(APIView):
 
 class UserView(APIView):
     def get(self, request):
-        accessToken = request.COOKIES.get('accessToken')
-        if accessToken:
-            id = decodeAccessToken(accessToken)
-            user = User.objects.filter(pk=id).first()
-            return Response(UserSerializer(user).data)
+        if request.user:
+            return Response(UserSerializer(request.user).data)
         raise AuthenticationFailed('unauthenticated')
 
 class RefreshApiView(APIView):
