@@ -82,7 +82,6 @@ WSGI_APPLICATION = 'LMS.wsgi.application'
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
 DATABASES = {
-<<<<<<< HEAD
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
     #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
@@ -95,18 +94,14 @@ DATABASES = {
     #     'HOST': 'localhost', 
     #     'PORT': '3306',
     # }
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.mysql',
-    #     'NAME': 'project1',
-    #     'USER' : 'root',
-    #     'PASSWORD' : 'rootroot',
-    #     'PORT' : 3306,
-    #     'HOST' : '127.0.0.1',
-=======
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
->>>>>>> 1fc461a752a06da2a704ee4aaaaf2e4b432d2b5b
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project1',
+        'USER' : 'root',
+        'PASSWORD' : 'rootroot',
+        'PORT' : 3306,
+        'HOST' : '127.0.0.1',
+
     }
     # 'default': {
     #     'ENGINE': 'django.db.backends.mysql',

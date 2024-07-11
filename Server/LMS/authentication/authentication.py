@@ -63,3 +63,23 @@ class JWTAuthenticationBackEnd(BaseAuthentication):
             request.user = None    
 
         return (request.user,None)
+    
+
+class JWTAuthenticationBackEnd(BaseAuthentication):
+    def authenticate(self, request):
+        token = request.COOKIES.get('accessToken')
+        if not token:
+            return None
+        
+        try:
+            payload = jwt.decode(token, 'access_secret', algorithms=['HS256'])
+            user_id = payload['user_id']
+            try:
+                user = User.objects.get(id=user_id)
+                return (user, None)
+            except User.DoesNotExist:
+                return None
+        except jwt.ExpiredSignatureError:
+            return None
+        except jwt.InvalidTokenError:
+            return None
